@@ -1,14 +1,17 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <ion-title text-center>
+      <img src="assets/imgs/logo-full.png" height="43">
+      </ion-title>      
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content class="card-background-page">
+  <ion-card *ngFor="let cat of listCategory" (click)="passarInfo(cat.id)" routerLink="/list-product" routerDirection="forward">
+
+        <img [src]="cat.imagePath" />
+        <div class="card-title">{{cat.name}}</div>
+        <div class="card-subtitle">{{cat.about}}</div>
+    
+</ion-card>
 </ion-content>

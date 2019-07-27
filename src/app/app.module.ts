@@ -1,6 +1,13 @@
+import { ListProductPage } from './list-product/list-product.page';
+import { RestaurantsService } from './restaurants.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { HomePage } from './home/home.page';
+
+
+
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -12,11 +19,14 @@ import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [HttpClientModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    HomePage,
+    ListProductPage,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    RestaurantsService
   ],
   bootstrap: [AppComponent]
 })

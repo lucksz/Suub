@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cardápio</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+  <ion-card *ngFor="let cat of listMenu">
+
+  
+        <div class="card-title">{{cat.name}}</div>
+        <div class="card-subtitle">{{cat.description}}</div>
+    
+</ion-card>
+</ion-content>
